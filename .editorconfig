@@ -1,0 +1,10 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Groovy, Java, Kotlin, XML
+[*.{groovy,java,kt,xml}]
+indent_style = tab
+indent_size = 4
+continuation_indent_size = 8
