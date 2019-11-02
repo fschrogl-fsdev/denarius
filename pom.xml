@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>at.schrogl.fsdineros</groupId>
+	<artifactId>fsdineros-pom</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>FSDineros</name>
+	<description>WebApplication for tracking daily expenses</description>
+
+	<modules>
+		<module>fsdineros-web</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<fork>true</fork>
+						<showDeprecation>true</showDeprecation>
+						<showWarnings>true</showWarnings>
+						<source>11</source>
+						<target>11</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.ec4j.maven</groupId>
+					<artifactId>editorconfig-maven-plugin</artifactId>
+					<version>0.0.10</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

@@ -1,6 +1,7 @@
 ### Intellij ###
 .idea
-.iml
+**/*.iml
+**/target/
 
 ### Java ###
 *.class

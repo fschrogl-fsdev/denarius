@@ -5,4 +5,7 @@ A WebApp mainly designed for tracking daily expenses. Based on Spring Boot, Mini
 ## Requirements
 
 - Java 11+
-- PostgreSQL
+- PostgreSQL 10.6+
+
+## How to start
+
