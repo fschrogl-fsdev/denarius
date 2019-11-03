@@ -12,16 +12,16 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>at.schrogl.fsdineros</groupId>
-	<artifactId>fsdineros-pom</artifactId>
+	<groupId>at.schrogl.coinmaster</groupId>
+	<artifactId>coinmaster-pom</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>FSDineros</name>
+	<name>Coinmaster</name>
 	<description>WebApplication for tracking daily expenses</description>
 
 	<modules>
-		<module>fsdineros-web</module>
+		<module>coinmaster-web</module>
 	</modules>
 
 	<build>

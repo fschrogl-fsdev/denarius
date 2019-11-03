@@ -1,4 +1,4 @@
-package at.schrogl.fsdineros;
+package at.schrogl.coinmaster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class FsDinerosApplication {
+public class CoinmasterApplication {
 
 	@RequestMapping("/")
 	String home() {
@@ -15,6 +15,6 @@ public class FsDinerosApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(FsDinerosApplication.class, args);
+		SpringApplication.run(CoinmasterApplication.class, args);
 	}
 }
