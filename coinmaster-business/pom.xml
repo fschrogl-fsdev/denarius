@@ -11,28 +11,14 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>coinmaster-web</artifactId>
+	<artifactId>coinmaster-business</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>at.schrogl.coinmaster</groupId>
-			<artifactId>coinmaster-business</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>coinmaster-persistence</artifactId>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

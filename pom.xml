@@ -22,7 +22,29 @@
 
 	<modules>
 		<module>coinmaster-web</module>
+		<module>coinmaster-business</module>
+		<module>coinmaster-persistence</module>
 	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>at.schrogl.coinmaster</groupId>
+				<artifactId>coinmaster-business</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>at.schrogl.coinmaster</groupId>
+				<artifactId>coinmaster-persistence</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>at.schrogl.coinmaster</groupId>
+				<artifactId>coinmaster-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<pluginManagement>
