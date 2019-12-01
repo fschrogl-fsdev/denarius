@@ -12,35 +12,35 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>at.schrogl.coinmaster</groupId>
-	<artifactId>coinmaster-pom</artifactId>
+	<groupId>at.schrogl.denarius</groupId>
+	<artifactId>denarius-pom</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Coinmaster</name>
+	<name>Denarius</name>
 	<description>WebApplication for tracking daily expenses</description>
 
 	<modules>
-		<module>coinmaster-web</module>
-		<module>coinmaster-business</module>
-		<module>coinmaster-persistence</module>
+		<module>denarius-web</module>
+		<module>denarius-business</module>
+		<module>denarius-persistence</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>at.schrogl.coinmaster</groupId>
-				<artifactId>coinmaster-business</artifactId>
+				<groupId>at.schrogl.denarius</groupId>
+				<artifactId>denarius-business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>at.schrogl.coinmaster</groupId>
-				<artifactId>coinmaster-persistence</artifactId>
+				<groupId>at.schrogl.denarius</groupId>
+				<artifactId>denarius-persistence</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>at.schrogl.coinmaster</groupId>
-				<artifactId>coinmaster-web</artifactId>
+				<groupId>at.schrogl.denarius</groupId>
+				<artifactId>denarius-web</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

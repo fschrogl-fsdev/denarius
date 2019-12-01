@@ -1,4 +1,4 @@
-package at.schrogl.coinmaster;
+package at.schrogl.denarius;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class CoinmasterApplication {
+public class DenariusApplication {
 
 	@RequestMapping("/")
 	String home() {
@@ -15,6 +15,6 @@ public class CoinmasterApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoinmasterApplication.class, args);
+		SpringApplication.run(DenariusApplication.class, args);
 	}
 }

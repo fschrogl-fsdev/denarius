@@ -6,18 +6,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>at.schrogl.coinmaster</groupId>
-		<artifactId>coinmaster-pom</artifactId>
+		<groupId>at.schrogl.denarius</groupId>
+		<artifactId>denarius-pom</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>coinmaster-business</artifactId>
+	<artifactId>denarius-business</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>at.schrogl.coinmaster</groupId>
-			<artifactId>coinmaster-persistence</artifactId>
+			<groupId>at.schrogl.denarius</groupId>
+			<artifactId>denarius-persistence</artifactId>
 		</dependency>
 	</dependencies>
 

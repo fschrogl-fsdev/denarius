@@ -6,12 +6,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>at.schrogl.coinmaster</groupId>
-		<artifactId>coinmaster-pom</artifactId>
+		<groupId>at.schrogl.denarius</groupId>
+		<artifactId>denarius-pom</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>coinmaster-persistence</artifactId>
+	<artifactId>denarius-persistence</artifactId>
 	<packaging>jar</packaging>
 
 </project>

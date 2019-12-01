@@ -1,6 +1,6 @@
-# Coinmaster
+# Denarius
 
-A WebApp mainly designed for tracking daily expenses. Based on Spring Boot, Bootstrap and AngularJS.
+A WebApp mainly designed for tracking daily expenses. Based on Spring Boot, Bootstrap and VueJS.
 
 ## Requirements
 
@@ -13,14 +13,14 @@ This application is implemented using Spring Boot framework, hence it is a self-
 be started using the Spring Boot Maven Plugin's run goal:
 
 ```bash
-mvn -pl coinmaster-web -am spring-boot:run
+mvn -pl denarius-web -am spring-boot:run
 ```
 
 Or by creating the application's Spring Boot JAR and starting it directly from the command line:
 
 ```bash
 mvn clean install
-java -jar coinmaster-web/target/coinmaster-web-X.Y.Z.jar
+java -jar denarius-web/target/denarius-web-X.Y.Z.jar
 ```
 
 ## How to develop
@@ -30,5 +30,13 @@ When developing the application make sure to activate Maven profile ``developmen
 the Spring profiles configures the application for development purposes, i.e. using an in-memory database.
 
 ```bash
-mvn -P development -pl coinmaster-web -am spring-boot:run --spring.profiles.active=development
+mvn -P development -pl denarius-web -am spring-boot:run --spring.profiles.active=development
 ```
+
+## Miscellaneous
+
+### Banner art
+
+The ASCII graphic in file ``banner.txt``, which is displayed during startup of Spring Boot applications was created
+using the free [Text to ASCII Art Generator](http://patorjk.com/software/taag/) from
+[Patorjk.com](http://www.patorjk.com).
