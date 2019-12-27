@@ -40,3 +40,8 @@ mvn -P development -pl denarius-web -am spring-boot:run --spring.profiles.active
 The ASCII graphic in file ``banner.txt``, which is displayed during startup of Spring Boot applications was created
 using the free [Text to ASCII Art Generator](http://patorjk.com/software/taag/) from
 [Patorjk.com](http://www.patorjk.com).
+
+### Application's logo and favicon
+
+The application's logo and favicon are made by [Freepik](https://www.flaticon.com/authors/freepik) from
+[www.flaticon.com](https://www.flaticon.com).
