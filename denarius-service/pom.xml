@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>at.schrogl.denarius</groupId>
-			<artifactId>denarius-business</artifactId>
+			<artifactId>denarius-persistence</artifactId>
 		</dependency>
 
 		<dependency>
