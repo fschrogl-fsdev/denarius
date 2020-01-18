@@ -1,8 +1,6 @@
-package at.schrogl.denarius;
+package at.schrogl.denarius.persistence;
 
-import at.schrogl.denarius.persistence.model.User;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -16,17 +14,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-@SpringBootApplication
+@SpringBootConfiguration
 @EnableJpaRepositories
 @EnableTransactionManagement
-public class DenariusApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(DenariusApplication.class, args);
-	}
+public class SpringTestPersistenceConfiguration {
 
 	@Bean("dataSource")
-	public DataSource dataSource() {
+	public DataSource testEmbeddedDataSource() {
 		return new EmbeddedDatabaseBuilder()
 			.setType(EmbeddedDatabaseType.H2)
 			.generateUniqueName(true)
@@ -34,22 +28,21 @@ public class DenariusApplication {
 	}
 
 	@Bean("entityManagerFactory")
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+	public LocalContainerEntityManagerFactoryBean testLocalContainerEntityManagerFactory() {
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
 		hibernateJpaVendorAdapter.setGenerateDdl(true);
-		hibernateJpaVendorAdapter.setShowSql(false);
+		hibernateJpaVendorAdapter.setShowSql(true);
 
 		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactoryBean.setJpaVendorAdapter(hibernateJpaVendorAdapter);
-		entityManagerFactoryBean.setPackagesToScan(User.class.getPackageName());
-		entityManagerFactoryBean.setPersistenceUnitName("persistenceUnit");
-		entityManagerFactoryBean.setDataSource(dataSource());
+		entityManagerFactoryBean.setPackagesToScan(getClass().getPackageName());
+		entityManagerFactoryBean.setPersistenceUnitName("testingPersistenceUnit");
+		entityManagerFactoryBean.setDataSource(testEmbeddedDataSource());
 		return entityManagerFactoryBean;
 	}
 
 	@Bean("transactionManager")
-	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+	public PlatformTransactionManager testJpaTransactionManager(EntityManagerFactory entityManagerFactory) {
 		return new JpaTransactionManager(entityManagerFactory);
 	}
-
 }
