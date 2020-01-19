@@ -1,0 +1,31 @@
+name: Continuous
+
+on:
+  push:
+    branches: 
+      - develop
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches: 
+      - develop
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build
+      run: mvn -B -e -V -T1 install -DskipTests=true
+      
+    - name: Unit Test
+      run: mvn -B -e -V -T1 surefire:test
+      
+    - name: Integration Test
+      run: mvn -B -e -V -T1 failsafe:integration-test
+      
