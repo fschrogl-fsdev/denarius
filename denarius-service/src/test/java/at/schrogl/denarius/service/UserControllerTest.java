@@ -7,10 +7,15 @@ import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.any;
 
 @SpringBootTest(classes = SpringTestServiceConfiguration.class)
 public class UserControllerTest {
@@ -27,8 +32,29 @@ public class UserControllerTest {
 	}
 
 	@Test
-	public void getUser() {
-		User user = userController.getUser("1");
+	public void testCreate() {
+		Mockito.when(userDaoMock.save(any())).thenReturn(new User());
+
+		User user = new User("username", "password", "denarius@schrogl.at", true);
+		assertNotNull(userController.create(user));
+	}
+
+	@Test
+	public void testRead() {
+		User user = userController.read(UUID.randomUUID());
 		assertNull(user);
+	}
+
+	@Test
+	public void testUpdate() {
+		Mockito.when(userDaoMock.updateByUuid(any())).thenReturn(UUID.randomUUID());
+
+		User user = new User("username", "password", "denarius@schrogl.at", true);
+		assertNotNull(userController.update(UUID.randomUUID(), user));
+	}
+
+	@Test
+	public void testDelete() {
+		assertNull(userController.delete(UUID.randomUUID()));
 	}
 }

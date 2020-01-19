@@ -3,12 +3,14 @@ package at.schrogl.denarius.persistence.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Table(name = "USERS")
 public class User implements Serializable {
 
 	public User() {
+		this.uuid = UUID.randomUUID();
 	}
 
 	public User(String username, String password, String email, Boolean active) {
@@ -16,12 +18,16 @@ public class User implements Serializable {
 		this.password = password;
 		this.email = email;
 		this.active = active;
+		this.uuid = UUID.randomUUID();
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID", unique = true, nullable = false, updatable = false)
 	private Long id;
+
+	@Column(name = "UUID", unique = true, nullable = false, updatable = false)
+	private UUID uuid;
 
 	@Column(name = "USERNAME", unique = true, nullable = false, length = 50)
 	private String username;
@@ -59,6 +65,14 @@ public class User implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public UUID getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(UUID uuid) {
+		this.uuid = uuid;
 	}
 
 	public String getUsername() {
