@@ -21,19 +21,13 @@
 	<description>WebApplication for tracking daily expenses</description>
 
 	<modules>
-		<module>denarius-web</module>
-		<module>denarius-business</module>
 		<module>denarius-persistence</module>
 		<module>denarius-service</module>
+		<module>denarius-web</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>at.schrogl.denarius</groupId>
-				<artifactId>denarius-business</artifactId>
-				<version>${project.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>at.schrogl.denarius</groupId>
 				<artifactId>denarius-persistence</artifactId>

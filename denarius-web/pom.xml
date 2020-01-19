@@ -19,6 +19,13 @@
 			<groupId>at.schrogl.denarius</groupId>
 			<artifactId>denarius-service</artifactId>
 		</dependency>
+
+		<dependency>
+			<!-- Replace with Postgresql in PX-->
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.200</version>
+		</dependency>
 	</dependencies>
 
 	<build>
