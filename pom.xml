@@ -26,6 +26,13 @@
 		<module>denarius-web</module>
 	</modules>
 
+	<properties>
+		<sonar.projectKey>fschrogl-fsdev_Denarius</sonar.projectKey>
+		<sonar.organization>fschrogl-fsdev</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>b36f2851eeba28ceae77812cf067913249fca26c</sonar.login>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -72,8 +79,14 @@
 						<target>11</target>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>3.6.1.1688</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

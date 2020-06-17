@@ -36,4 +36,6 @@ jobs:
 
       - name: Integration Test
         run: mvn -B -e -V -T1 failsafe:integration-test
-      
+
+      - name: Code Analysis
+        run: mvn -B -e -V sonar:sonar
