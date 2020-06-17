@@ -2,6 +2,8 @@
 
 A WebApp mainly designed for tracking daily expenses. Based on Spring Boot, Bootstrap and VueJS.
 
+![Build Status Badge](https://github.com/fschrogl-fsdev/Denarius/workflows/develop/badge.svg)
+
 ## Requirements
 
 - Java 11+
