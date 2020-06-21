@@ -26,12 +26,6 @@
 		<module>denarius-web</module>
 	</modules>
 
-	<properties>
-		<sonar.organization>fschrogl-fsdev</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>b36f2851eeba28ceae77812cf067913249fca26c</sonar.login>
-	</properties>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
