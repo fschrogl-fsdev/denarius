@@ -38,9 +38,7 @@ jobs:
         run: mvn -B -e -V -T1 surefire:test
 
       - name: Integration Test
-        run: >-
-          mvn -B -e -V -T1 failsafe:integration-test
-            -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url="https://sonarcloud.io" -Dsonar.organization=fschrogl-fsdev
+        run: mvn -B -e -V -T1 failsafe:integration-test -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url="https://sonarcloud.io" -Dsonar.organization=fschrogl-fsdev
 
       - name: Code Analysis
         run: mvn -B -e -V -T1 sonar:sonar
