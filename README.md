@@ -2,7 +2,8 @@
 
 A WebApp mainly designed for tracking daily expenses. Based on Spring Boot, Spring Data JPA and OpenAPI.
 
-![Build Status Badge](https://github.com/fschrogl-fsdev/Denarius/workflows/develop/badge.svg)
+[![Build Status Badge](https://github.com/fschrogl-fsdev/Denarius/workflows/develop/badge.svg)](https://github.com/fschrogl-fsdev/denarius/actions?query=workflow%3Adevelop)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=at.schrogl.denarius%3Adenarius-pom&metric=alert_status)](https://sonarcloud.io/dashboard?id=at.schrogl.denarius%3Adenarius-pom)
 
 ## Requirements
 
