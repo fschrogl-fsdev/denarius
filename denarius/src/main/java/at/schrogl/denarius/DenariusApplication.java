@@ -29,6 +29,7 @@ public class DenariusApplication {
 	public DataSource dataSource() {
 		return new EmbeddedDatabaseBuilder()
 			.setType(EmbeddedDatabaseType.H2)
+			.setScriptEncoding("UTF-8")
 			.generateUniqueName(true)
 			.build();
 	}

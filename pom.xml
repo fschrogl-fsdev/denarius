@@ -17,19 +17,26 @@
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Denarius</name>
-	<description>WebApplication for tracking daily expenses</description>
+	<description>Web application for tracking daily expenses</description>
 
 	<modules>
 		<module>denarius-persistence</module>
 		<module>denarius-service</module>
-		<module>denarius-web</module>
+        <module>denarius-api</module>
+		<module>denarius</module>
 	</modules>
 
 	<properties>
+		<!-- General settings -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Sonar Properties -->
 		<sonar.organization>fschrogl-fsdev</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.login>b36f2851eeba28ceae77812cf067913249fca26c</sonar.login>
+
+		<!-- Swagger/OpenAPI Properties -->
+		<swagger.skip>false</swagger.skip>
 	</properties>
 
 	<dependencyManagement>
@@ -46,7 +53,12 @@
 			</dependency>
 			<dependency>
 				<groupId>at.schrogl.denarius</groupId>
-				<artifactId>denarius-web</artifactId>
+				<artifactId>denarius-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>at.schrogl.denarius</groupId>
+				<artifactId>denarius</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -82,6 +94,11 @@
 					<groupId>org.sonarsource.scanner.maven</groupId>
 					<artifactId>sonar-maven-plugin</artifactId>
 					<version>3.6.1.1688</version>
+				</plugin>
+				<plugin>
+					<groupId>io.swagger.codegen.v3</groupId>
+					<artifactId>swagger-codegen-maven-plugin</artifactId>
+					<version>3.0.21</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>

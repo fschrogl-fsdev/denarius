@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: 'Denarius Users API'
+  description: 'User management endpoints'
+  contact:
+    name: Fritz Schrogl (FSDev)
+    email: fs+github@schrogl.at
+  license:
+    name: GNU General Public License v3.0
+    url: 'https://choosealicense.com/licenses/gpl-3.0/'
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/fschrogl/denarius-users/1.0.0
+tags:
+  - name: admins
+    description: Operations only available to application administrators
+  - name: users
+    description: Operations available to regular users
+paths:
+  /user/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: A user's unique identifier
+        required: true
+        schema:
+          type: string
+          format: uuid
+    get:
+      tags:
+        - admins
+      summary: Retrieve all information about a user
+      operationId: getUser
+      description: |
+        Retrieves all information stored about the requested user
+      responses:
+        '200':
+          description: User was found
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/UserInfo'
+              example: {
+                "id": "e9c93675-64c9-402c-91b5-63889c01416b",
+                "email": "user@domain.com"
+              }
+        '400':
+          description: Invalid UUID supplied
+        '404':
+          description: User not found
+components:
+  schemas:
+    UserInfo:
+      type: object
+      required:
+        - id
+        - email
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: e9c93675-64c9-402c-91b5-63889c01416b
+        email:
+          type: string
+          format: email
+          example: user@domain.com
