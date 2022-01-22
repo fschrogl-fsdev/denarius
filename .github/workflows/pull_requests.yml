@@ -6,19 +6,23 @@ on:
   pull_request:
     branches:
       - develop
+    types: [opened, synchronize, reopened]
     paths-ignore:
       - '**.md'
 
 # Configure jobs this workflow consists of
 jobs:
   build:
-    timeout-minutes: 5
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
       # https://github.com/marketplace/actions/checkout
       - name: Checkout Workspace
         uses: actions/checkout@v2
+        with:
+          # Disabling shallow clone is recommended by SonarCloud for improved relevancy of reporting
+          fetch-depth: 0
 
       # https://github.com/marketplace/actions/setup-java-jdk
       - name: Setup Java JDK
@@ -36,4 +40,12 @@ jobs:
 
       - name: Integration Test
         run: mvn -B -e -V -T1 failsafe:integration-test
-      
+
+      - name: Code Analysis
+        run: |
+          mvn -B -e -V -T1 sonar:sonar \
+          -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url="https://sonarcloud.io" -Dsonar.organization=fschrogl-fsdev \
+          -Dsonar.pullrequest.provider=GitHub
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
